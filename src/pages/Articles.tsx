@@ -1,23 +1,12 @@
 import { useState, useMemo } from 'react';
 import { SectionTitle } from '../components/SectionTitle';
 import { ArticleCard } from '../components/ArticleCard';
-import articlesData from '../data/articles.json';
-
-interface Article {
-  id: string;
-  title: string;
-  author: string;
-  summary: string;
-  content: string;
-  issue: string;
-  published: boolean;
-  date: string;
-}
+import { getArticles, type Article } from '../utils/articles';
 
 export function Articles() {
   const [selectedIssue, setSelectedIssue] = useState<string>('all');
 
-  const articles = articlesData.filter((article: Article) => article.published);
+  const articles = getArticles();
 
   const issues = useMemo(() => {
     const uniqueIssues = [...new Set(articles.map((article: Article) => article.issue))];

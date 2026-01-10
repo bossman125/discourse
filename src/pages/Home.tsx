@@ -1,11 +1,10 @@
 import { Link } from 'react-router-dom';
 import { ArticleCard } from '../components/ArticleCard';
-import articles from '../data/articles.json';
+import { getArticles } from '../utils/articles';
 import { ArrowRight, BookOpen } from 'lucide-react';
 
 export function Home() {
-  const publishedArticles = articles.filter(article => article.published);
-  const latestArticles = publishedArticles.slice(0, 3);
+  const latestArticles = getArticles().slice(0, 3);
 
   return (
     <div className="min-h-screen bg-white">

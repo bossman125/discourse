@@ -1,63 +1,13 @@
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
-import articlesData from '../data/articles.json';
-
-interface Article {
-  id: string;
-  title: string;
-  author: string;
-  summary: string;
-  content: string;
-  issue: string;
-  published: boolean;
-  date: string;
-}
-
-const parseMarkdown = (content: string) => {
-  const lines = content.split('\n');
-  const elements: JSX.Element[] = [];
-  let key = 0;
-
-  for (let i = 0; i < lines.length; i++) {
-    const line = lines[i];
-
-    if (line.startsWith('# ')) {
-      elements.push(
-        <h1 key={key++} className="text-4xl font-serif font-bold text-slate-900 mb-6 mt-8">
-          {line.substring(2)}
-        </h1>
-      );
-    } else if (line.startsWith('## ')) {
-      elements.push(
-        <h2 key={key++} className="text-3xl font-serif font-bold text-slate-900 mb-4 mt-8">
-          {line.substring(3)}
-        </h2>
-      );
-    } else if (line.startsWith('### ')) {
-      elements.push(
-        <h3 key={key++} className="text-2xl font-serif font-bold text-slate-900 mb-3 mt-6">
-          {line.substring(4)}
-        </h3>
-      );
-    } else if (line.trim() === '') {
-      continue;
-    } else {
-      elements.push(
-        <p key={key++} className="text-gray-700 text-lg leading-relaxed mb-6">
-          {line}
-        </p>
-      );
-    }
-  }
-
-  return elements;
-};
+import ReactMarkdown from 'react-markdown';
+import { getArticleById } from '../utils/articles';
 
 export function Article() {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
 
-  const article = articlesData.find((a: Article) => a.id === id && a.published);
+  const article = id ? getArticleById(id) : undefined;
 
   if (!article) {
     return (
@@ -128,7 +78,32 @@ export function Article() {
           </div>
 
           <div className="prose prose-lg max-w-none mb-16">
-            {parseMarkdown(article.content)}
+            <ReactMarkdown
+              components={{
+                h1: ({ children }) => (
+                  <h1 className="text-4xl font-serif font-bold text-slate-900 mb-6 mt-8">
+                    {children}
+                  </h1>
+                ),
+                h2: ({ children }) => (
+                  <h2 className="text-3xl font-serif font-bold text-slate-900 mb-4 mt-8">
+                    {children}
+                  </h2>
+                ),
+                h3: ({ children }) => (
+                  <h3 className="text-2xl font-serif font-bold text-slate-900 mb-3 mt-6">
+                    {children}
+                  </h3>
+                ),
+                p: ({ children }) => (
+                  <p className="text-gray-700 text-lg leading-relaxed mb-6">
+                    {children}
+                  </p>
+                ),
+              }}
+            >
+              {article.content}
+            </ReactMarkdown>
           </div>
 
           <div className="border-t border-gray-200 pt-12 text-center">

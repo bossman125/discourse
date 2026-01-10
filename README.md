@@ -35,50 +35,76 @@ npm install
 
 ### Step 3: Create Your New Article
 
-1. Open the file `src/data/articles.json` in your text editor
-2. Add your new article to the array following the format below
-3. Place your article at the top of the array (after the opening `[` bracket) to feature it first
+Articles are now written as Markdown files with YAML frontmatter. This makes them easier to write and edit!
 
-#### Article Format
+1. Navigate to the `src/articles/` directory
+2. Create a new file with a descriptive name using kebab-case: `your-article-title.md`
+3. Use the template below to structure your article
 
-```json
-{
-  "id": "6",
-  "title": "Your Article Title Here",
-  "author": "Your Name",
-  "summary": "A brief 1-2 sentence summary that appears on the article card and at the top of the article page.",
-  "content": "# Your Article Title\n\nYour article content goes here. Use markdown formatting:\n\n## Section Heading\n\nParagraph text here.\n\n### Subsection\n\nMore content here.",
-  "issue": "Winter 2026",
-  "published": true,
-  "date": "2026-01-15"
-}
+#### Article Template
+
+Create a new `.md` file in `src/articles/` with the following format:
+
+```markdown
+---
+id: "6"
+title: "Your Article Title Here"
+author: "Your Name"
+summary: "A brief 1-2 sentence summary that appears on the article card and at the top of the article page."
+issue: "Winter 2026"
+date: "2026-01-15"
+published: true
+---
+
+# Your Article Title Here
+
+Your article content goes here. Write naturally using standard Markdown formatting.
+
+## Section Heading
+
+Regular paragraph text here. You can write multiple paragraphs simply by adding blank lines between them.
+
+Another paragraph here.
+
+### Subsection
+
+More content here. Use standard Markdown for:
+- Lists
+- **Bold text**
+- *Italic text*
+- And more...
+
+## Conclusion
+
+Your concluding thoughts here.
 ```
 
 #### Field Descriptions
 
+**YAML Frontmatter** (between the `---` markers):
 - **id**: A unique number for the article (increment from the last article)
 - **title**: The full title of your article
 - **author**: Author name(s)
 - **summary**: A brief abstract or summary (1-3 sentences)
-- **content**: The full article content in markdown format (see formatting guide below)
 - **issue**: The journal issue (e.g., "Winter 2026", "Spring 2025")
-- **published**: Set to `true` to make the article visible, `false` to hide it
 - **date**: Publication date in YYYY-MM-DD format
+- **published**: Set to `true` to make the article visible, `false` to hide it
+
+**Article Body** (after the frontmatter):
+Write your article using standard Markdown syntax. No escaping or `\n` characters needed!
 
 #### Markdown Formatting Guide
 
-In the `content` field, use these markdown patterns:
+Use these standard Markdown patterns in your article body:
 
 - `# Heading` - Main title (H1)
 - `## Heading` - Section heading (H2)
 - `### Heading` - Subsection heading (H3)
-- Regular text for paragraphs
-- Use `\n\n` to create paragraph breaks
-
-**Example:**
-```
-"content": "# The Future of AI\n\nArtificial intelligence is transforming our world.\n\n## Current Applications\n\nToday we see AI in many fields.\n\n### Healthcare\n\nAI assists doctors in diagnosis."
-```
+- Regular text for paragraphs (just write naturally)
+- Blank line between paragraphs
+- `**bold text**` for **bold**
+- `*italic text*` for *italic*
+- `- item` for bullet lists
 
 ### Step 4: Test Locally
 
@@ -101,7 +127,7 @@ Press `Ctrl+C` in the terminal to stop the dev server when done.
 Save your work to Git:
 
 ```bash
-git add src/data/articles.json
+git add src/articles/your-article-title.md
 git commit -m "Add new article: [Your Article Title]"
 ```
 
@@ -138,24 +164,24 @@ This command will:
 
 To modify an existing article:
 
-1. Open `src/data/articles.json`
-2. Find the article by its `id` or `title`
-3. Make your changes
+1. Navigate to `src/articles/`
+2. Find the article's `.md` file by name
+3. Open the file and make your changes
 4. Follow steps 4-7 above (test, commit, push, deploy)
 
 ## 📋 Quick Reference: Common Tasks
 
 ### Hide an Article (Unpublish)
 
-Change `"published": true` to `"published": false` in the article object.
+In the article's frontmatter, change `published: true` to `published: false`.
 
 ### Change Article Order
 
-Articles are displayed in the order they appear in the JSON file. Move an article object up in the array to feature it higher on the page.
+Articles are automatically sorted by date (newest first). To change the order, modify the `date` field in the article's frontmatter.
 
 ### Add a New Issue
 
-Simply use a new issue name in the `"issue"` field (e.g., "Summer 2026"). The site will automatically create a filter button for it.
+Simply use a new issue name in the `issue` field (e.g., "Summer 2026"). The site will automatically create a filter button for it.
 
 ### Update Before Making Changes
 
@@ -174,25 +200,33 @@ Install Git from [git-scm.com](https://git-scm.com/downloads)
 Install Node.js from [nodejs.org](https://nodejs.org/)
 
 ### Build Errors
-- Check that all JSON is valid (no missing commas, quotes, or brackets)
-- Ensure all `"id"` values are unique
+- Check that all YAML frontmatter is valid (proper indentation, quotes around strings with special characters)
+- Ensure all `id` values are unique across articles
 - Verify dates are in YYYY-MM-DD format
+- Make sure the frontmatter is between `---` markers
 
 ### Changes Not Showing on Live Site
 - Wait 2-3 minutes after deploying
 - Hard refresh your browser (Ctrl+Shift+R or Cmd+Shift+R)
 - Check that `npm run deploy` completed without errors
 
-### JSON Validation
-Use a JSON validator like [jsonlint.com](https://jsonlint.com/) to check your `articles.json` file for syntax errors.
+### YAML Validation
+Make sure your frontmatter follows proper YAML syntax:
+- Use quotes around strings with special characters
+- Keep consistent indentation
+- Check that all required fields are present
 
 ## 📁 Project Structure
 
 ```
 discourse/
 ├── src/
-│   ├── data/
-│   │   └── articles.json      ← Edit this file to add/modify articles
+│   ├── articles/              ← Add your .md articles here!
+│   │   ├── student-identity-global-discourse.md
+│   │   ├── ethics-digital-scholarship.md
+│   │   └── ...
+│   ├── utils/
+│   │   └── articles.ts        ← Article loading logic
 │   ├── pages/
 │   │   ├── Articles.tsx       ← Articles list page
 │   │   ├── Article.tsx        ← Individual article page
