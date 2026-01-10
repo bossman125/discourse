@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Discourse</title>
+    <script type="text/javascript">
+      // Redirect all unknown routes back to index.html
+      const path = window.location.pathname.replace('/discourse', '');
+      window.location.replace('/discourse/' + '#' + path);
+    </script>
+  </head>
+  <body></body>
+</html>
