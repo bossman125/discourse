@@ -12,7 +12,7 @@ import { Submit } from './pages/Submit';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/discourse">
       <div className="flex flex-col min-h-screen bg-white">
         <Header />
         <main className="flex-grow">
