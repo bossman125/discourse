@@ -2,7 +2,7 @@ import { SectionTitle } from '../components/SectionTitle';
 import { ExternalLink, FileText, CheckCircle, Users } from 'lucide-react';
 
 export function Submit() {
-  const GOOGLE_FORM_URL = 'https://forms.google.com/';
+  const GOOGLE_FORM_URL = 'https://forms.gle/YjzduQv4a6fTT2THA';
 
   const guidelines = [
     {
