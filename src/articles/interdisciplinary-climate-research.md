@@ -5,7 +5,7 @@ author: "Dr. Robert Martinez"
 summary: "Exploring how cross-disciplinary collaboration can advance our understanding of climate change and inform policy solutions."
 issue: "Fall 2025"
 date: "2025-10-05"
-published: true
+published: false
 ---
 
 # Interdisciplinary Approaches to Climate Research

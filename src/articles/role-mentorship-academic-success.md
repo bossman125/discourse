@@ -5,7 +5,7 @@ author: "Emily Thompson"
 summary: "Examining the critical importance of mentorship relationships in shaping successful academic careers."
 issue: "Spring 2025"
 date: "2025-04-12"
-published: true
+published: false
 ---
 
 # The Role of Mentorship in Academic Success

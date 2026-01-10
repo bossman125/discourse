@@ -5,7 +5,7 @@ author: "Jane Doe"
 summary: "An exploration of student identity within global scholarship, examining how young scholars navigate cultural boundaries in academic spaces."
 issue: "Winter 2026"
 date: "2026-01-15"
-published: true
+published: false
 ---
 
 # Student Identity and Global Discourse
