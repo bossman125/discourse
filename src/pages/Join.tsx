@@ -20,17 +20,39 @@ export function Join() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+
+    const recipient = 'discourseacademicjournal@gmail.com';
+    const subject = encodeURIComponent(
+      `Join Application from ${formData.name || formData.email || 'Applicant'}`
+    );
+
+    const bodyLines = [
+      `Name: ${formData.name}`,
+      `Email: ${formData.email}`,
+      `Institution: ${formData.institution}`,
+      `Interest: ${formData.interest}`,
+      '',
+      `Message:\n${formData.message}`,
+    ];
+
+    const body = encodeURIComponent(bodyLines.join('\n'));
+    const mailto = `mailto:${recipient}?subject=${subject}&body=${body}`;
+
     setIsSubmitting(true);
 
-    setTimeout(() => {
-      setSubmitMessage("Thank you for your interest! We'll be in touch within 48 hours.");
-      setFormData({ name: '', email: '', institution: '', interest: 'contributor', message: '' });
-      setIsSubmitting(false);
+    // Try to open the user's mail client with a pre-filled message
+    window.location.href = mailto;
 
-      setTimeout(() => setSubmitMessage(''), 5000);
-    }, 1000);
+    setSubmitMessage(
+      "Your email client should open to send your application. If it didn't, please email discourseacademicjournal@gmail.com."
+    );
+
+    setFormData({ name: '', email: '', institution: '', interest: 'contributor', message: '' });
+    setIsSubmitting(false);
+
+    setTimeout(() => setSubmitMessage(''), 7000);
   };
 
   return (
@@ -172,8 +194,8 @@ export function Join() {
               <p className="text-sm text-gray-700 mb-4">
                 Contact our team at
               </p>
-              <a href="mailto:hello@discourse.edu" className="text-blue-600 font-semibold hover:text-blue-700">
-                hello@discourse.edu
+              <a href="mailto:discourseacademicjournal@gmail.com" className="text-blue-600 font-semibold hover:text-blue-700">
+                discourseacademicjournal@gmail.com
               </a>
             </div>
           </div>
