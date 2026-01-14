@@ -5,7 +5,7 @@ author: "Sarah Williams"
 summary: "An analysis of traditional peer review processes and proposals for reform in contemporary academic publishing."
 issue: "Fall 2025"
 date: "2025-11-20"
-published: false
+published: False
 ---
 
 # Reimagining Peer Review in the 21st Century
