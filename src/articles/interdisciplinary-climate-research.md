@@ -6,6 +6,7 @@ summary: "Exploring how cross-disciplinary collaboration can advance our underst
 issue: "Fall 2025"
 date: "2025-10-05"
 published: false
+subject: "Climate Science"
 ---
 
 # Interdisciplinary Approaches to Climate Research

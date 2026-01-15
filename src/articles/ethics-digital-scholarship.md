@@ -6,6 +6,7 @@ summary: "A critical examination of ethical considerations in the age of digital
 issue: "Winter 2026"
 date: "2026-01-10"
 published: false
+subject: "Digital Ethics"
 ---
 
 # The Ethics of Digital Scholarship

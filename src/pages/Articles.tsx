@@ -5,6 +5,7 @@ import { getArticles, type Article } from '../utils/articles';
 
 export function Articles() {
   const [selectedIssue, setSelectedIssue] = useState<string>('all');
+  const [selectedSubject, setSelectedSubject] = useState<string>('all');
 
   const articles = getArticles();
 
@@ -13,12 +14,24 @@ export function Articles() {
     return uniqueIssues.sort().reverse();
   }, []);
 
+  const subjects = useMemo(() => {
+    const uniqueSubjects = [...new Set(articles.map((article: Article) => article.subject))];
+    return uniqueSubjects.sort();
+  }, []);
+
   const filteredArticles = useMemo(() => {
-    if (selectedIssue === 'all') {
-      return articles;
+    let filtered = articles;
+
+    if (selectedIssue !== 'all') {
+      filtered = filtered.filter((article: Article) => article.issue === selectedIssue);
     }
-    return articles.filter((article: Article) => article.issue === selectedIssue);
-  }, [articles, selectedIssue]);
+
+    if (selectedSubject !== 'all') {
+      filtered = filtered.filter((article: Article) => article.subject === selectedSubject);
+    }
+
+    return filtered.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+  }, [articles, selectedIssue, selectedSubject]);
 
   return (
     <div className="min-h-screen pt-24 pb-20 px-4 sm:px-6 lg:px-8">
@@ -51,6 +64,34 @@ export function Articles() {
                 }`}
               >
                 {issue}
+              </button>
+            ))}
+          </div>
+        )}
+
+        {subjects.length > 1 && (
+          <div className="flex flex-wrap gap-2 mb-8 justify-center">
+            <button
+              onClick={() => setSelectedSubject('all')}
+              className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+                selectedSubject === 'all'
+                  ? 'bg-green-600 text-white'
+                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+              }`}
+            >
+              All Subjects
+            </button>
+            {subjects.map((subject: string) => (
+              <button
+                key={subject}
+                onClick={() => setSelectedSubject(subject)}
+                className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+                  selectedSubject === subject
+                    ? 'bg-green-600 text-white'
+                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                }`}
+              >
+                {subject}
               </button>
             ))}
           </div>

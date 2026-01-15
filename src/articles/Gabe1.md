@@ -6,6 +6,7 @@ summary: "This article examines how cerebellar lesions affect not only motor coo
 issue: "Unassigned"
 date: ""
 published: true
+subject: "Neuroscience"
 ---
 
 # Beyond Motor Control: The Cognitive and Affective shifts post Cerebellar Dysfunction

@@ -6,6 +6,7 @@ summary: "An exploration of student identity within global scholarship, examinin
 issue: "Winter 2026"
 date: "2026-01-15"
 published: False
+subject: "Identity Studies"
 ---
 
 # Student Identity and Global Discourse

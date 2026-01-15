@@ -8,6 +8,7 @@ interface ArticleCardProps {
   summary: string;
   issue: string;
   date: string;
+  subject: string;
 }
 
 export function ArticleCard({
@@ -17,6 +18,7 @@ export function ArticleCard({
   summary,
   issue,
   date,
+  subject,
 }: ArticleCardProps) {
   return (
     <Link to={`/articles/${id}`}>
@@ -25,6 +27,9 @@ export function ArticleCard({
           <div className="flex items-center gap-3 mb-4">
             <span className="text-xs text-blue-600 font-medium bg-blue-50 px-3 py-1 rounded-full border border-blue-200">
               {issue}
+            </span>
+            <span className="text-xs text-green-600 font-medium bg-green-50 px-3 py-1 rounded-full border border-green-200">
+              {subject}
             </span>
             <span className="text-xs text-gray-500 font-medium">
               {new Date(date).toLocaleDateString()}

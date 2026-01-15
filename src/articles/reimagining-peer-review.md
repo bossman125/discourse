@@ -6,6 +6,7 @@ summary: "An analysis of traditional peer review processes and proposals for ref
 issue: "Fall 2025"
 date: "2025-11-20"
 published: False
+subject: "Academic Publishing"
 ---
 
 # Reimagining Peer Review in the 21st Century

@@ -6,6 +6,7 @@ summary: "This article introduces the concept of net zero by explaining the gree
 issue: "Unassigned"
 date: ""
 published: true
+subject: "Climate Change"
 ---
 
 # An introduction to the pursuit of Net Zero:

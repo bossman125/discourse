@@ -7,6 +7,7 @@ export interface Article {
   issue: string;
   date: string;
   published: boolean;
+  subject: string;
 }
 
 const articleFiles = import.meta.glob('../articles/*.md', {
@@ -65,6 +66,7 @@ export function getArticles(): Article[] {
       issue: data.issue,
       date: data.date,
       published: data.published ?? true,
+      subject: data.subject,
     });
   }
 
