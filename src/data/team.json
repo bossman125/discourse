@@ -4,13 +4,31 @@
     "name": "Ryan Chan",
     "position": "Editor-in-Chief",
     "bio": "",
-    "email": ""
+    "email": "",
+    "team": "management"
   },
   {
     "id": 2,
     "name": "Jason Huang",
-    "position": "Managing Editor",
+    "position": "Lead Developer",
     "bio": "",
-    "email": ""
+    "email": "",
+    "team": "management"
+  },
+  {
+    "id": 3,
+    "name": "Zijing Wu",
+    "position": "Lead Economics Editor",
+    "bio": "",
+    "email": "",
+    "team": "management"
+  },
+  {
+    "id": 4,
+    "name": "Gabriel Pokorny",
+    "position": "European Regional Manager",
+    "bio": "",
+    "email": "",
+    "team": "national-leaders"
   }
 ]

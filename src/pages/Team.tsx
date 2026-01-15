@@ -3,6 +3,9 @@ import { SectionTitle } from '../components/SectionTitle';
 import team from '../data/team.json';
 
 export function Team() {
+  const managementTeam = team.filter(member => member.team === 'management');
+  const nationalLeadersTeam = team.filter(member => member.team === 'national-leaders');
+
   return (
     <div className="min-h-screen pt-24 pb-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
@@ -11,10 +14,26 @@ export function Team() {
           subtitle="Meet the editors, writers, and thinkers behind Discourse"
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
-          {team.map((member) => (
-            <TeamCard key={member.id} {...member} />
-          ))}
+        <div className="mb-16">
+          <h2 className="font-serif text-2xl font-bold text-slate-900 mb-8 text-center">
+            Management Team
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {managementTeam.map((member) => (
+              <TeamCard key={member.id} {...member} />
+            ))}
+          </div>
+        </div>
+
+        <div className="mb-20">
+          <h2 className="font-serif text-2xl font-bold text-slate-900 mb-8 text-center">
+            National Leaders Team
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {nationalLeadersTeam.map((member) => (
+              <TeamCard key={member.id} {...member} />
+            ))}
+          </div>
         </div>
 
         <div className="bg-gradient-to-r from-slate-50 to-blue-50 rounded-lg p-12 border border-gray-200">
