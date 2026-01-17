@@ -3,7 +3,7 @@ id: "2"
 title: "The Ethics of Digital Scholarship"
 author: "Michael Chen"
 summary: "A critical examination of ethical considerations in the age of digital humanities and open-access publishing."
-issue: "Winter 2026"
+issue: "Spring 2026"
 date: "2026-01-10"
 published: false
 subject: "Digital Ethics"

@@ -3,7 +3,7 @@ id: "1"
 title: "Student Identity and Global Discourse"
 author: "Jane Doe"
 summary: "An exploration of student identity within global scholarship, examining how young scholars navigate cultural boundaries in academic spaces."
-issue: "Winter 2026"
+issue: "Fall 2025"
 date: "2026-01-15"
 published: False
 subject: "Identity Studies"

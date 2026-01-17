@@ -3,7 +3,7 @@
     "id": 1,
     "name": "Ryan Chan",
     "position": "Editor-in-Chief",
-    "bio": "",
+    "bio": "Hong Kong",
     "email": "",
     "team": "management"
   },
@@ -11,7 +11,7 @@
     "id": 2,
     "name": "Jason Huang",
     "position": "Lead Developer",
-    "bio": "",
+    "bio": "Hong Kong",
     "email": "",
     "team": "management"
   },
@@ -19,7 +19,7 @@
     "id": 3,
     "name": "Zijing Wu",
     "position": "Lead Economics Editor",
-    "bio": "",
+    "bio": "Hong Kong",
     "email": "",
     "team": "management"
   },
@@ -27,7 +27,7 @@
     "id": 4,
     "name": "Gabriel Pokorny",
     "position": "Managing Editor",
-    "bio": "",
+    "bio": "Czech Republic",
     "email": "",
     "team": "management"
   }
