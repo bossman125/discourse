@@ -8,6 +8,7 @@ export interface Article {
   date: string;
   published: boolean;
   subject: string;
+  pdfFile?: string;
 }
 
 const articleFiles = import.meta.glob('../articles/*.md', {
@@ -16,7 +17,7 @@ const articleFiles = import.meta.glob('../articles/*.md', {
   import: 'default'
 });
 
-function parseFrontmatter(fileContent: string): { data: Record<string, any>; content: string } {
+function parseFrontmatter(fileContent: string): { data: Record<string, string | boolean>; content: string } {
   const frontmatterRegex = /^---\s*\n([\s\S]*?)\n---\s*\n([\s\S]*)$/;
   const match = fileContent.match(frontmatterRegex);
 
@@ -25,13 +26,13 @@ function parseFrontmatter(fileContent: string): { data: Record<string, any>; con
   }
 
   const [, frontmatterStr, content] = match;
-  const data: Record<string, any> = {};
+  const data: Record<string, string | boolean> = {};
 
   frontmatterStr.split('\n').forEach(line => {
     const colonIndex = line.indexOf(':');
     if (colonIndex > 0) {
       const key = line.substring(0, colonIndex).trim();
-      let value = line.substring(colonIndex + 1).trim();
+      let value: string | boolean = line.substring(colonIndex + 1).trim();
 
       // Remove quotes if present
       if ((value.startsWith('"') && value.endsWith('"')) ||
@@ -67,6 +68,7 @@ export function getArticles(): Article[] {
       date: data.date,
       published: data.published ?? true,
       subject: data.subject,
+      pdfFile: data.pdfFile,
     });
   }
 
@@ -77,4 +79,8 @@ export function getArticles(): Article[] {
 
 export function getArticleById(id: string): Article | undefined {
   return getArticles().find(article => article.id === id);
+}
+
+export function getPdfPath(pdfFile: string): string {
+  return `/pdfs/${pdfFile}`;
 }

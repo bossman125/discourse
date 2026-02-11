@@ -1,7 +1,8 @@
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
-import { getArticleById } from '../utils/articles';
+import { getArticleById, getPdfPath } from '../utils/articles';
+import { PdfViewer } from '../components/PdfViewer';
 
 export function Article() {
   const { id } = useParams<{ id: string }>();
@@ -105,6 +106,12 @@ export function Article() {
               {article.content}
             </ReactMarkdown>
           </div>
+
+          {article.pdfFile && (
+            <div className="mb-16">
+              <PdfViewer file={getPdfPath(article.pdfFile)} />
+            </div>
+          )}
 
           <div className="border-t border-gray-200 pt-12 text-center">
             <Link
