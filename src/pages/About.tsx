@@ -10,15 +10,15 @@ export function About() {
           <div className="lg:col-span-2">
             <div className="space-y-6 text-gray-700 leading-relaxed">
               <p className="text-lg">
-                Discourse is a student-led academic journal founded in 2022 by a collective of researchers, thinkers, and writers committed to rigorous intellectual exchange. We believe that the most innovative solutions to global challenges emerge from open dialogue across disciplines and borders.
+                Discourse is a student-led academic journal founded in 2025 by a collective of students committed to the goal of connecting the global perspectives of the next generation to work together and focus on cross-cultural relationships. We believe that the most innovative approaches for the next generation to solve global challenges emerge from open dialogue across disciplines and borders.
               </p>
 
               <p>
-                Our journal publishes peer-reviewed research, critical essays, and opinion pieces that advance contemporary understanding of economics, environment, policy, technology, and society. We maintain the highest standards of academic rigor while remaining accessible to a broader intellectual community.
+                Our journal publishes peer-reviewed research and opinion pieces that advance contemporary understanding in the social sciences, while remaining accessible to a broader intellectual community.
               </p>
 
               <p>
-                What sets Discourse apart is our commitment to diverse perspectives. Our contributors represent 18 countries across six continents, bringing varied cultural, economic, and political contexts to bear on universal questions. This diversity strengthens our analysis and challenges groupthink.
+                What sets Discourse apart is our commitment to diverse perspectives. We aim to have contributors represent a region of countries across six continents, bringing varied cultural, economic, and political contexts to bear on universal questions.
               </p>
 
               <div className="bg-gradient-to-br from-slate-50 to-blue-50 rounded-lg p-8 my-8 border border-gray-200">
@@ -81,9 +81,10 @@ export function About() {
         </div>
 
         <div className="bg-slate-900 text-white rounded-lg p-12 text-center">
-          <h3 className="font-serif text-3xl font-bold mb-4">Our Editorial Philosophy</h3>
+          <h3 className="font-serif text-3xl font-bold mb-4">Our Mission:</h3>
           <p className="max-w-2xl mx-auto text-gray-100 leading-relaxed">
-            We believe that peer review strengthens scholarship. Every article undergoes rigorous evaluation by subject matter experts. Yet we also believe that innovation sometimes emerges from challenging orthodoxy. That's why we welcome bold thinking—as long as it's backed by evidence and transparent reasoning.
+            Discourse is a student-led academic journal dedicated to publishing rigorous research, critical analysis, and innovative thinking on pressing global issues.
+Our goal is to connect the global perspectives of the next generation to work together and focus on cross-cultural relationships, as we believe that this is the most effective approach for the next generation to solve global challenges.
           </p>
         </div>
       </div>
