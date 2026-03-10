@@ -76,10 +76,7 @@ export function Home() {
                 </h2>
               </div>
               <p className="text-gray-700 text-lg leading-relaxed font-light">
-                Discourse is a student-led academic journal dedicated to publishing rigorous research, critical analysis, and innovative thinking on pressing global issues.
-              </p>
-              <p className="text-gray-600 leading-relaxed text-lg">
-                We bring together diverse voices from universities worldwide to advance meaningful discourse on economics, environment, policy, technology, and society.
+                Discourse is a student-led academic journal dedicated to publishing rigorous research, critical analysis, and innovative thinking on pressing global issues. Our goal is to connect the global perspectives of the next generation to work together and focus on cross-cultural relationships, as we believe that this is the most effective approach for the next generation to solve global challenges.
               </p>
               <Link
                 to="/about"
