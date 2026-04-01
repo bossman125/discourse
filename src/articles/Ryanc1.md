@@ -4,7 +4,7 @@ title: "An introduction to the pursuit of Net Zero"
 author: "Ryan Chan"
 summary: "This article introduces the concept of net zero by explaining the greenhouse effect, anthropogenic climate change, and the role of sustainability, renewable energy, and policy in mitigating climate impacts."
 issue: "Spring 2026"
-date: "2026-01-01"
+date: "2025-07-06"
 published: true
 subject: "Climate Change"
 ---
