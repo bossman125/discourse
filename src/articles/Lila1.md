@@ -7,5 +7,5 @@ issue: "Spring 2026"
 date: "2026-01-15"
 published: true
 subject: "Medical AI Research"
-pdfFile: "Lila1.pdf"
+pdfFile: "https://drive.google.com/file/d/17CPqt9S3HoSo-XIogNDdMelPucsl1brPE-V2sTiZXcg/view?usp=sharing"
 ---

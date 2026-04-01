@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { ArticleCard } from '../components/ArticleCard';
 import { getArticles } from '../utils/articles';
 import { ArrowRight, BookOpen } from 'lucide-react';
+import { siteStats } from '../data/siteStats';
 
 export function Home() {
   const latestArticles = getArticles().slice(0, 3);
@@ -145,22 +146,12 @@ export function Home() {
         <div className="max-w-6xl mx-auto">
           <div className="animate-fade-in bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 rounded-3xl p-12 md:p-16 text-white shadow-2xl">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
-              <div className="text-center animate-fade-in animate-fade-in-delay-100">
-                <div className="text-4xl md:text-5xl font-bold text-blue-100 mb-3">0</div>
-                <p className="text-blue-50 font-medium text-sm md:text-base">Contributors</p>
-              </div>
-              <div className="text-center animate-fade-in animate-fade-in-delay-200">
-                <div className="text-4xl md:text-5xl font-bold text-blue-100 mb-3">0</div>
-                <p className="text-blue-50 font-medium text-sm md:text-base">Countries</p>
-              </div>
-              <div className="text-center animate-fade-in animate-fade-in-delay-300">
-                <div className="text-4xl md:text-5xl font-bold text-blue-100 mb-3">0</div>
-                <p className="text-blue-50 font-medium text-sm md:text-base">Articles Published</p>
-              </div>
-              <div className="text-center animate-fade-in animate-fade-in-delay-400">
-                <div className="text-4xl md:text-5xl font-bold text-blue-100 mb-3">0</div>
-                <p className="text-blue-50 font-medium text-sm md:text-base">Editorial Team</p>
-              </div>
+              {siteStats.map((stat, index) => (
+                <div key={stat.id} className={`text-center animate-fade-in animate-fade-in-delay-${(index + 1) * 100}`}>
+                  <div className="text-4xl md:text-5xl font-bold text-blue-100 mb-3">{stat.value}</div>
+                  <p className="text-blue-50 font-medium text-sm md:text-base">{stat.label}</p>
+                </div>
+              ))}
             </div>
             <div className="border-t border-blue-500/30 pt-8">
               <p className="text-center text-blue-50 text-lg font-light">

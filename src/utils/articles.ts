@@ -82,5 +82,10 @@ export function getArticleById(id: string): Article | undefined {
 }
 
 export function getPdfPath(pdfFile: string): string {
+  // If it's already a full URL (Google Drive), return as-is
+  if (pdfFile.startsWith('http')) {
+    return pdfFile;
+  }
+  // Otherwise, assume it's a local file (for backward compatibility)
   return `/pdfs/${pdfFile}`;
 }

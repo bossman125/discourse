@@ -30,5 +30,21 @@
     "bio": "Czech Republic",
     "email": "",
     "team": "management"
+  },
+  {
+  "id": 5,
+  "name": "Anandmayee Narain",
+  "position": "Lead Climate Editor",
+  "bio": "United Arab Emirates",
+  "email": "",
+  "team": "management"
+  },
+  {
+    "id": 6,
+    "name": "Alexander Schmitz",
+    "position": "Lead Politics and Health Editor",
+    "bio": "Germany",
+    "email": "",
+    "team": "management"
   }
 ]

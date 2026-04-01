@@ -29,7 +29,6 @@ export function Footer() {
             <h4 className="text-white font-semibold mb-4 text-sm">Resources</h4>
             <ul className="space-y-2 text-sm">
               <li><Link to="/join" className="hover:text-white transition-colors">Join Us</Link></li>
-              <li><Link to="/contact" className="hover:text-white transition-colors">Contact</Link></li>
               <li><a href="#" className="hover:text-white transition-colors">Archive</a></li>
               <li><a href="#" className="hover:text-white transition-colors">Submissions</a></li>
             </ul>

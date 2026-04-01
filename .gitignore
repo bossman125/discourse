@@ -21,3 +21,7 @@ dist-ssr
 *.sln
 *.sw?
 .env
+
+# PDFs are now stored in Google Drive
+public/pdfs/*.pdf
+public/pdfs/*:Zone.Identifier

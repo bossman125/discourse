@@ -8,7 +8,6 @@ import { Article } from './pages/Article';
 import { About } from './pages/About';
 import { Team } from './pages/Team';
 import { Join } from './pages/Join';
-import { Contact } from './pages/Contact';
 import { Submit } from './pages/Submit';
 
 function AppContent() {
@@ -34,7 +33,6 @@ function AppContent() {
           <Route path="/articles" element={<Articles />} />
           <Route path="/articles/:id" element={<Article />} />
           <Route path="/join" element={<Join />} />
-          <Route path="/contact" element={<Contact />} />
           <Route path="/submit" element={<Submit />} />
         </Routes>
       </main>

@@ -16,6 +16,8 @@ export function PdfViewer({ file, title }: PdfViewerProps) {
   const [error, setError] = useState<boolean>(false);
   const [isMobile, setIsMobile] = useState<boolean>(false);
 
+  const isGoogleDriveFile = file.includes('drive.google.com');
+
   useEffect(() => {
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768);
@@ -27,6 +29,14 @@ export function PdfViewer({ file, title }: PdfViewerProps) {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
+  function getDrivePreviewUrl(url: string): string {
+    if (url.includes('drive.google.com')) {
+      return url.replace('/view?usp=sharing', '/preview').replace('/edit?usp=sharing', '/preview');
+    }
+    return url;
+  }
+
+
   function onDocumentLoadSuccess({ numPages }: { numPages: number }) {
     setNumPages(numPages);
     setError(false);
@@ -36,6 +46,8 @@ export function PdfViewer({ file, title }: PdfViewerProps) {
     setError(true);
   }
 
+  const drivePreviewUrl = getDrivePreviewUrl(file);
+
   if (isMobile) {
     return (
       <div className="flex flex-col items-center my-6 p-6 border-2 border-dashed border-gray-300 rounded-lg bg-gray-50">
@@ -43,9 +55,7 @@ export function PdfViewer({ file, title }: PdfViewerProps) {
           <h3 className="text-lg font-semibold text-center mb-4 text-slate-900">{title}</h3>
         )}
         <FileText size={48} className="text-gray-400 mb-4" />
-        <p className="text-gray-600 text-center mb-4">
-          PDF viewing is optimized for larger screens
-        </p>
+        <p className="text-gray-600 text-center mb-4">PDF viewing is optimized for larger screens</p>
         <a
           href={file}
           target="_blank"
@@ -59,15 +69,44 @@ export function PdfViewer({ file, title }: PdfViewerProps) {
     );
   }
 
+  if (isGoogleDriveFile) {
+    return (
+      <div className="flex flex-col items-center my-6">
+        {title && (
+          <h3 className="text-lg font-semibold text-center mb-4 text-slate-900">{title}</h3>
+        )}
+        <div className="w-full max-w-6xl">
+          <iframe
+            src={drivePreviewUrl}
+            width="100%"
+            height="800"
+            style={{ border: 'none', borderRadius: '8px', boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)', minHeight: '70vh' }}
+            title={title || 'PDF Document'}
+            allowFullScreen
+          />
+        </div>
+        <div className="mt-4 text-center">
+          <a
+            href={file}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-4 py-2 text-blue-600 hover:text-blue-700 font-semibold transition-colors"
+          >
+            <FileText size={16} />
+            Open in new tab
+          </a>
+        </div>
+      </div>
+    );
+  }
+
   if (error) {
     return (
       <div className="flex flex-col items-center my-6 p-6 border-2 border-red-200 rounded-lg bg-red-50">
         {title && (
           <h3 className="text-lg font-semibold text-center mb-4 text-slate-900">{title}</h3>
         )}
-        <p className="text-red-600 text-center mb-4">
-          Failed to load PDF document
-        </p>
+        <p className="text-red-600 text-center mb-4">Failed to load PDF document</p>
         <a
           href={file}
           target="_blank"
@@ -75,7 +114,7 @@ export function PdfViewer({ file, title }: PdfViewerProps) {
           className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors"
         >
           <FileText size={20} />
-          View PDF (opens in new tab)
+          Open in new tab
         </a>
       </div>
     );
@@ -104,9 +143,7 @@ export function PdfViewer({ file, title }: PdfViewerProps) {
         ))}
       </Document>
       {numPages > 0 && (
-        <p className="text-sm text-gray-500 mt-4">
-          Total pages: {numPages}
-        </p>
+        <p className="text-sm text-gray-500 mt-4">Total pages: {numPages}</p>
       )}
     </div>
   );

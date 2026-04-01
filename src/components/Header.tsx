@@ -13,7 +13,6 @@ export function Header() {
     { label: 'Our Team', path: '/team' },
     { label: 'Articles', path: '/articles' },
     { label: 'Join Us', path: '/join' },
-    { label: 'Contact', path: '/contact' },
   ];
 
   return (

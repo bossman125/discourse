@@ -1,4 +1,5 @@
 import { SectionTitle } from '../components/SectionTitle';
+import { siteStats } from '../data/siteStats';
 
 export function About() {
   return (
@@ -57,22 +58,12 @@ export function About() {
             <div className="bg-white border border-gray-200 rounded-lg p-6">
               <h4 className="font-serif text-xl font-bold text-slate-900 mb-6">By The Numbers</h4>
               <div className="space-y-4">
-                <div>
-                  <div className="text-3xl font-bold text-blue-600">0</div>
-                  <p className="text-sm text-gray-600">Active Contributors</p>
-                </div>
-                <div>
-                  <div className="text-3xl font-bold text-blue-600">0</div>
-                  <p className="text-sm text-gray-600">Countries</p>
-                </div>
-                <div>
-                  <div className="text-3xl font-bold text-blue-600">0</div>
-                  <p className="text-sm text-gray-600">Published Articles</p>
-                </div>
-                <div>
-                  <div className="text-3xl font-bold text-blue-600">0</div>
-                  <p className="text-sm text-gray-600">Editorial Board</p>
-                </div>
+                {siteStats.map((stat) => (
+                  <div key={stat.id}>
+                    <div className="text-3xl font-bold text-blue-600">{stat.value}</div>
+                    <p className="text-sm text-gray-600">{stat.label}</p>
+                  </div>
+                ))}
               </div>
             </div>
 
