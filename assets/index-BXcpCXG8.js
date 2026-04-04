@@ -132,7 +132,7 @@ issue: "Spring 2026"
 date: "2026-03-20"
 published: true
 subject: "Politics"
-pdfFile: "Alexander1.pdf"
+pdfFile: "https://drive.google.com/file/d/1rrGbNHKzRvWIoSOylb91JnqpzQaIg-oF/view?usp=sharing"
 ---
 `,hM=`---
 id: "6"
@@ -154,7 +154,7 @@ issue: "Spring 2026"
 date: "2026-01-15"
 published: true
 subject: "Medical AI Research"
-pdfFile: "https://drive.google.com/file/d/17CPqt9S3HoSo-XIogNDdMelPucsl1brPE-V2sTiZXcg/view?usp=sharing"
+pdfFile: "Lila1.pdf"
 ---
 `,fM=`---
 id: "12"
