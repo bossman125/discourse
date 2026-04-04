@@ -7,5 +7,5 @@ issue: "Spring 2026"
 date: "2026-03-20"
 published: true
 subject: "Politics"
-pdfFile: "Alexander1.pdf"
+pdfFile: "https://drive.google.com/file/d/1rrGbNHKzRvWIoSOylb91JnqpzQaIg-oF/view?usp=sharing"
 ---
