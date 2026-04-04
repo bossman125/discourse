@@ -32,12 +32,12 @@
     "team": "management"
   },
   {
-  "id": 5,
-  "name": "Anandmayee Narain",
-  "position": "Lead Climate Editor",
-  "bio": "United Arab Emirates",
-  "email": "",
-  "team": "management"
+    "id": 5,
+    "name": "Anandmayee Narain",
+    "position": "Lead Climate Editor",
+    "bio": "United Arab Emirates",
+    "email": "",
+    "team": "management"
   },
   {
     "id": 6,
@@ -46,5 +46,13 @@
     "bio": "Germany",
     "email": "",
     "team": "management"
+  },
+  {
+    "id": 7,
+    "name": "Lila Bağ",
+    "position": "National Leader of Turkey",
+    "bio": "Turkey",
+    "email": "",
+    "team": "national-leaders"
   }
 ]
