@@ -1,5 +1,5 @@
 ---
-id: "15"
+id: "9"
 title: "Explaining the Greenhouse Effect"
 author: "Richelle Choi"
 summary: "The article explains how the greenhouse effect naturally warms Earth and how human activities have intensified it, leading to global warming. It also outlines the environmental impacts of climate change and suggests simple actions individuals can take to reduce emissions."
@@ -7,5 +7,5 @@ issue: "Spring 2026"
 date: "2026-02-20"
 published: true
 subject: "Environmental Science"
-pdfFile: "Richelle4.pdf"
+pdfFile: "https://drive.google.com/file/d/1RxMka9xZPxyrcEhzsK1ZSzfMIy6ttMu6/view?usp=sharing"
 ---

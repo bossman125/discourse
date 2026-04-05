@@ -1,5 +1,5 @@
 ---
-id: "8"
+id: "6"
 title: "How Lung Cancer Severity Can Be Predicted Using Machine-Learning Based on Different Risk Factors"
 author: "Lila Bağ"
 summary: "This research explores the application of machine learning algorithms to predict lung cancer severity by analyzing various risk factors including genetic predisposition, environmental exposures, and lifestyle choices."
