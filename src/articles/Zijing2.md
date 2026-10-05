@@ -7,5 +7,5 @@ issue: "Summer 2026"
 date: "2026-06-21"
 published: true
 subject: "Economics"
-pdfFile: "https://drive.google.com/file/d/1utTHLfgYm3tU9UacwGjHWFN4aG_If6IC/view?usp=drive_link"
+pdfFile: "https://drive.google.com/file/d/1utTHLfgYm3tU9UacwGjHWFN4aG_If6IC/view?usp=sharing"
 ---
