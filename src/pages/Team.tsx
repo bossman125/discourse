@@ -1,10 +1,13 @@
 import { TeamCard } from '../components/TeamCard';
+import { WriterCard } from '../components/WriterCard';
 import { SectionTitle } from '../components/SectionTitle';
+import { getWriters } from '../utils/writers';
 import team from '../data/team.json';
 
 export function Team() {
   const managementTeam = team.filter(member => member.team === 'management');
   const nationalLeadersTeam = team.filter(member => member.team === 'national-leaders');
+  const writers = getWriters();
 
   return (
     <div className="min-h-screen pt-24 pb-20 px-4 sm:px-6 lg:px-8">
@@ -35,6 +38,22 @@ export function Team() {
             ))}
           </div>
         </div>
+
+        {writers.length > 0 && (
+          <div className="mb-20">
+            <h2 className="font-serif text-2xl font-bold text-slate-900 mb-2 text-center">
+              Writers
+            </h2>
+            <p className="text-gray-600 text-center max-w-2xl mx-auto mb-8">
+              The contributors whose research and analysis have been published in Discourse.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {writers.map((writer) => (
+                <WriterCard key={writer.id} writer={writer} />
+              ))}
+            </div>
+          </div>
+        )}
 
         <div className="bg-gradient-to-r from-slate-50 to-blue-50 rounded-lg p-12 border border-gray-200">
           <h3 className="font-serif text-3xl font-bold text-slate-900 mb-6 text-center">
