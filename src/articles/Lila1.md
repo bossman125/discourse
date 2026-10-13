@@ -6,6 +6,6 @@ summary: "This research explores the application of machine learning algorithms 
 issue: "Spring 2026"
 date: "2026-01-15"
 published: true
-subject: "Medical AI Research"
+subject: "Medicine"
 pdfFile: "Lila1.pdf"
 ---
