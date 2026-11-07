@@ -54,5 +54,13 @@
     "bio": "Turkey",
     "email": "",
     "team": "national-leaders"
+  },
+  {
+    "id": 8,
+    "name": "Daniel Peng",
+    "position": "National Leader of US",
+    "bio": "United States",
+    "email": "",
+    "team": "national-leaders"
   }
 ]

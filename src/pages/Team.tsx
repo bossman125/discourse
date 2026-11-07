@@ -1,5 +1,4 @@
 import { TeamCard } from '../components/TeamCard';
-import { WriterCard } from '../components/WriterCard';
 import { SectionTitle } from '../components/SectionTitle';
 import { getWriters } from '../utils/writers';
 import team from '../data/team.json';
@@ -47,11 +46,13 @@ export function Team() {
             <p className="text-gray-600 text-center max-w-2xl mx-auto mb-8">
               The contributors whose research and analysis have been published in Discourse.
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <ul className="max-w-2xl mx-auto divide-y divide-gray-100 border-y border-gray-100">
               {writers.map((writer) => (
-                <WriterCard key={writer.id} writer={writer} />
+                <li key={writer.id} className="py-3 text-center font-serif text-lg text-slate-800">
+                  {writer.name}
+                </li>
               ))}
-            </div>
+            </ul>
           </div>
         )}
 
